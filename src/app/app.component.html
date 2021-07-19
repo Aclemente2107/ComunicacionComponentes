@@ -1,0 +1,19 @@
+<div style="text-align: center;">
+  <app-balota *ngFor="let item of valores; let i=index" valor="{{ valores[i] }}"></app-balota>
+</div>
+<div style="text-align: center;">
+  <hr>
+  <button (click)="jugar()">JUGAR</button>
+  <hr>
+  <h2>{{ numeroGanador }}</h2>
+
+  <app-par-impar valor="{{ suma }}" (parImpar)="llamarParImpar($event)" #calculo></app-par-impar>
+  <div>
+    <h3>
+      {{mensaje}}
+    </h3>
+  </div>
+  <hr>
+  <p>Botón desde el padre llamando al metodo hijo</p>
+  <button (click)="calculo.calculoParImpar(suma)">Calculo</button>
+</div>
